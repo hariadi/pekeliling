@@ -48,7 +48,7 @@ a:hover {
 .wrapper {
 	margin:0 auto;
 	padding-top:20px;
-	max-width:86%;
+	max-width:75%;
 }
 /*------------------------------------*\
     Demo block
@@ -84,6 +84,7 @@ th + th {
 }
 /* 3rd Column: Tarikh Kuat Kuasa */
 th + th + th {
+	width:20%;
 }
 /* 4th Column: No. Pekeliling */
 th + th + th + th {
