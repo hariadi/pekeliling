@@ -1,0 +1,30 @@
+{
+  "name": "pekeliling",
+  "version": "0.0.1",
+  "description": "Rekabentuk Senarai Pekeliling 81 Skim Perkhidmatan Awam Ditambah Baik",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hariadi/pekeliling.git"
+  },
+  "keywords": [
+    "circular",
+    "pekeliling"
+  ],
+  "author": "Hariadi Hinta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hariadi/pekeliling/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-fileindex": "~0.1.0",
+    "pdfinfojs": "~0.3.5"
+  }
+}
