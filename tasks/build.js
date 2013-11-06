@@ -18,8 +18,28 @@ module.exports = function (grunt) {
     grunt.util.async.forEach(this.files, function (el, next) {
 
       el.src.forEach(function (file) {
+        grunt.log.writeln('>> '.green + ('Loading file: ').grey + file);
 				var pdf = new pdfinfo(file);
 				var data = pdf.getInfoSync();
+
+        var title = data.title;
+        var author = data.author;
+        var subject = data.author;
+
+        grunt.verbose.writeln('>> '.green + title);
+
+        if (title) {
+          data.title = capitalize(title);
+        }
+
+        if (author) {
+          data.author = capitalize(author);
+        }
+
+        if (subject) {
+          data.subject = capitalize(subject);
+        }
+
 				data[options.algorithm] = crypto.createHash(options.algorithm).update(grunt.file.read(file), options.encoding).digest('hex');
 				build[grunt.util.normalizelf(file)] = data;
       });
@@ -29,4 +49,8 @@ module.exports = function (grunt) {
     grunt.file.write(dest, JSON.stringify(build, null, options.indent));
     grunt.log.writeln('>> '.green + dest.grey + (' has been created!'));
   });
+};
+
+var capitalize = function(str) {
+  return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };

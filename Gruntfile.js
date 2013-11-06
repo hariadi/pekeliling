@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     build: {
       docs: {
         files: {
-          'assets/build.json': ['docs/*.pdf']
+          'assets/build.json': ['*.pdf']
         }
       }
     }
