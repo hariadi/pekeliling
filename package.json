@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,11 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "pdfinfojs": "~0.3.5",
-    "grunt-template": "~0.2.1"
+    "assemble": "~0.4.18",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-compress": "~0.5.2",
+    "grunt-contrib-jshint": "~0.7.1",
+    "load-grunt-tasks": "~0.2.0"
   }
 }

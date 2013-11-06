@@ -22,9 +22,31 @@ module.exports = function (grunt) {
 				var pdf = new pdfinfo(file);
 				var data = pdf.getInfoSync();
 
+        data.path = file;
+
         var title = data.title;
         var author = data.author;
-        var subject = data.author;
+        var subject = data.subject;
+        var effective_date;
+
+        var cases = path.basename(file, '.pdf');
+        
+        switch (cases) {
+          case 'pp092013':
+            effective_date = '1 Jun 2013';
+            break;
+          case 'pp102013':
+          case 'pp112013':
+          case 'pp122013':
+          case 'pp132013':
+            effective_date = '1 Julai 2013';
+            break;
+          default:
+            effective_date = '1 November 2013';
+            break;
+        }
+
+        data.effective_date = effective_date;
 
         grunt.verbose.writeln('>> '.green + title);
 
@@ -38,6 +60,7 @@ module.exports = function (grunt) {
 
         if (subject) {
           data.subject = capitalize(subject);
+          data.bilangan = capitalize(subject).replace(/Pekeliling Perkhidmatan Bilangan /i, "").replace(/ Tahun /i, "/");
         }
 
 				data[options.algorithm] = crypto.createHash(options.algorithm).update(grunt.file.read(file), options.encoding).digest('hex');
@@ -46,11 +69,16 @@ module.exports = function (grunt) {
       next();
     }, this.async());
 
+
     grunt.file.write(dest, JSON.stringify(build, null, options.indent));
     grunt.log.writeln('>> '.green + dest.grey + (' has been created!'));
+
+    
   });
 };
 
 var capitalize = function(str) {
-  return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+  return str.replace(/\w\S*/g, function(txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
 };
