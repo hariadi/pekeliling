@@ -15,6 +15,12 @@ module.exports = function (grunt) {
     var dest = this.files[0].dest;
     var build = {};
 
+    var capitalize = function(str) {
+      return str.replace(/\w\S*/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    };
+
     grunt.util.async.forEach(this.files, function (el, next) {
 
       el.src.forEach(function (file) {
@@ -22,7 +28,7 @@ module.exports = function (grunt) {
 				var pdf = new pdfinfo(file);
 				var data = pdf.getInfoSync();
 
-        data.path = file;
+        data.path = path.basename(file);
 
         var title = data.title;
         var author = data.author;
@@ -74,11 +80,5 @@ module.exports = function (grunt) {
     grunt.log.writeln('>> '.green + dest.grey + (' has been created!'));
 
     
-  });
-};
-
-var capitalize = function(str) {
-  return str.replace(/\w\S*/g, function(txt) {
-    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
   });
 };

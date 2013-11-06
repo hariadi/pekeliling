@@ -9,10 +9,27 @@ module.exports = function(grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
+    jshint: {
+      options: {
+        curly: true,
+        eqeqeq: true,
+        immed: true,
+        latedef: true,
+        newcap: true,
+        noarg: true,
+        sub: true,
+        undef: true,
+        boss: true,
+        eqnull: true,
+        node: true
+      },
+      all: ['Gruntfile.js', 'tasks/*.js']
+    },
+
     build: {
       docs: {
         files: {
-          'src/data/build.json': ['*.pdf']
+          'src/data/build.json': ['pekeliling/*.pdf']
         }
       }
     },
@@ -70,7 +87,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('assemble');
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', [ 'clean', 'build', 'assemble', 'copy', 'compress']);
+  grunt.registerTask('default', ['jshint', 'clean', 'build', 'assemble', 'copy', 'compress']);
 };
 
 
