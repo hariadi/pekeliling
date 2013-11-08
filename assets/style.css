@@ -83,8 +83,14 @@ a:hover {
   border-bottom: solid 1px #e6e6e6;
   border-left: solid 1px #aaa;
 }
-#logo {
+#logo, .center {
 	text-align: center;
+}
+.mark {
+	font-weight: bold;
+}
+.red {
+	color:#cc0000;
 }
 /*------------------------------------*\
     Table (directory listing)
