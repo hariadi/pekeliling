@@ -1,0 +1,161 @@
+/*------------------------------------*\
+    Indexer
+    by @hariadi
+\*------------------------------------*/
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+/* Have to use @import for the font, as you can only specify a single stylesheet */
+* {
+	margin:0;
+	padding:0;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	       box-sizing: border-box; 
+}
+
+html {
+	min-height:100%;
+	border-top:10px solid #ECEEF1;
+	border-bottom:10px solid #ECEEF1;
+	color:#61666c;
+	font-weight:400;
+	font-size:1em;
+	font-family:'Open Sans', sans-serif;
+	line-height:2em;
+}
+body {
+	padding:20px;
+	-webkit-backface-visibility:hidden;
+}
+h1 { 
+	font-size:1.2em;
+	text-align: center;
+	margin-bottom: 1em;
+	text-transform: uppercase;
+}
+code {
+	font-family:consolas,monospace;	
+}
+a {
+	color:#61666c;
+	text-decoration:none;
+}
+a:hover {
+    color: #2281D0;
+}
+/*------------------------------------*\
+    Wrapper
+\*------------------------------------*/
+.wrapper {
+	margin:0 auto;
+	padding-top:20px;
+	max-width:75%;
+}
+/*------------------------------------*\
+    Demo block
+\*------------------------------------*/
+.block {
+	font-size:.875em;
+	margin:20px 0;
+	padding:20px;
+	color:#9099A3;
+}
+/*------------------------------------*\
+    Table (directory listing)
+\*------------------------------------*/
+.highlighted { background: yellow; }
+.filter { float: right; }
+.filter label { padding-right: 6px; }
+.filter input {
+	width: 320px;
+  font-size: 20px;
+  padding: 2px 10px;
+  border-radius: 2;
+  border: solid 1px #555;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.filter input:focus {
+  border: none;
+  outline: none;
+  background-color: #eee;
+  border-top: solid 1px #aaa;
+  border-right: solid 1px #e6e6e6;
+  border-bottom: solid 1px #e6e6e6;
+  border-left: solid 1px #aaa;
+}
+#logo, .center {
+	text-align: center;
+}
+.mark {
+	font-weight: bold;
+}
+.red {
+	color:#cc0000;
+}
+/*------------------------------------*\
+    Table (directory listing)
+\*------------------------------------*/
+table {
+	width:100%;
+	border-collapse:collapse;
+	font-size:.875em;
+}
+tr {
+	outline:0;
+	border:0;
+}
+tr:hover td {
+	background:#f6f6f6;
+}
+th {
+	text-align:left;
+	padding-right:30px;
+}
+/* 2nd Column: Pekeliling Perkhidmatan */
+th + th {
+	width:75%;
+}
+/* 3rd Column: Tarikh Kuat Kuasa */
+th + th + th {
+	width:20%;
+}
+/* 4th Column: No. Pekeliling */
+th + th + th + th {
+}
+/* 5th Column: Saiz */
+th + th + th + th + th {
+	width:5%;
+}
+tr td:first-of-type {
+	padding-left:10px;
+	padding-right:10px;
+}
+td {
+	padding:6px;
+	outline:0;
+	border:0;
+	border-bottom:1px solid #edf1f5;
+	vertical-align:middle;
+	text-align:left;
+	-webkit-transition:background 300ms ease;
+	   -moz-transition:background 300ms ease;
+	    -ms-transition:background 300ms ease;
+	     -o-transition:background 300ms ease;
+	        transition:background 300ms ease;
+}
+td a{
+	display: block;
+}
+tr.parent a {
+	color:#9099A3;
+}
+	.parent a:hover {
+		color:#2281d0;
+	}
+/*------------------------------------*\
+    Footer
+\*------------------------------------*/
+.footer {
+	text-align:center;
+	font-size:.75em;
+}
