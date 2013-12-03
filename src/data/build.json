@@ -83,17 +83,17 @@
     "creator": "Acrobat PDFMaker 9.1 for Word",
     "producer": "Adobe PDF Library 9.0",
     "creationdate": "10/31/13 20:15:24",
-    "moddate": "10/31/13 20:33:59",
+    "moddate": "12/03/13 15:11:33",
     "tagged": "yes",
     "pages": "83",
     "encrypted": "no",
     "page_size": "595.44 x 841.68 pts",
-    "file_size": "452437 bytes",
+    "file_size": "653796 bytes",
     "optimized": "yes",
     "path": "pp132013.pdf",
     "effective_date": "1 Julai 2013",
     "bilangan": "13/2013",
-    "sha1": "4552ddbb0c63fdba326e5f2a859cc8a594dabefd"
+    "sha1": "9783f57825fd3a18eaf6b7d2aca9022f6cc7a559"
   },
   "pekeliling/pp142013.pdf": {
     "title": "Skim Perkhidmatan Pensyarah Farmasi",
@@ -192,19 +192,23 @@
     "sha1": "b90334b9c63626874bf62d103450285ece5ffa88"
   },
   "pekeliling/pp192013.pdf": {
+    "title": "Skim Perkhidmatan Pembantu Operasi Dan Pembantu Awam",
+    "subject": "Pekeliling Perkhidmatan Bilangan 19 Tahun 2013",
+    "author": "Jabatan Perkhidmatan Awam",
     "creator": "Adobe Acrobat Pro 9.5.5",
     "producer": "Adobe Acrobat Pro 9.5.5",
     "creationdate": "11/27/13 09:19:43",
-    "moddate": "12/02/13 11:09:56",
+    "moddate": "12/03/13 08:53:06",
     "tagged": "yes",
     "pages": "102",
     "encrypted": "no",
     "page_size": "595.44 x 841.68 pts",
-    "file_size": "788746 bytes",
+    "file_size": "789426 bytes",
     "optimized": "yes",
     "path": "pp192013.pdf",
     "effective_date": "1 November 2013",
-    "sha1": "3624ec6185acef40c847951878dfddf456be375d"
+    "bilangan": "19/2013",
+    "sha1": "913a7ee1a2102b4613d3a31f8014991f6944b7a1"
   },
   "pekeliling/pp202013.pdf": {
     "title": "Penjumudan Skim Perkhidmatan Pemandu Enjin (Keretapi Bukit Bendera)",
