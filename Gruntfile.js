@@ -34,6 +34,14 @@ module.exports = function(grunt) {
       }
     },
 
+    build_opsyen: {
+      docs: {
+        files: {
+          'src/data/opsyen.json': ['archive/*.zip']
+        }
+      }
+    },
+
     assemble: {
       options: {
         production: true,
@@ -67,9 +75,10 @@ module.exports = function(grunt) {
     },
 
 
-    clean: ['pekeliling/assets', 'pekeliling/index.html', 'src/data/build.json'],
+    clean: ['pekeliling/assets', 'pekeliling/index.html', 'src/data/*.json'],
 
     compress: {
+
       pekeliling: {
         options: {
           archive: './pekeliling.zip',
@@ -78,7 +87,115 @@ module.exports = function(grunt) {
         files: [
           { src: './pekeliling/**' }
         ]
+      },
+
+      pp112013: { 
+        options: {
+          archive: './archive/opsyen_pp112013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp112013/' } ]
+      },
+
+      pp122013: { 
+        options: {
+          archive: './archive/opsyen_pp122013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp122013/' } ]
+      },
+
+      pp132013: { 
+        options: {
+          archive: './archive/opsyen_pp132013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp132013/' } ]
+      },
+
+      pp142013: { 
+        options: {
+          archive: './archive/opsyen_pp142013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp142013/' } ]
+      },
+
+      pp152013: { 
+        options: {
+          archive: './archive/opsyen_pp152013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp152013/' } ]
+      },
+
+      pp172013: { 
+        options: {
+          archive: './archive/opsyen_pp172013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp172013/' } ]
+      },
+
+      pp182013: { 
+        options: {
+          archive: './archive/opsyen_pp182013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp182013/' } ]
+      },
+
+      pp192013: { 
+        options: {
+          archive: './archive/opsyen_pp192013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp192013/' } ]
+      },
+
+      pp202013: { 
+        options: {
+          archive: './archive/opsyen_pp202013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp202013/' } ]
+      },
+
+      pp212013: { 
+        options: {
+          archive: './archive/opsyen_pp212013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp212013/' } ]
+      },
+
+      pp222013: { 
+        options: {
+          archive: './archive/opsyen_pp222013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp222013/' } ]
+      },
+
+      pp232013: { 
+        options: {
+          archive: './archive/opsyen_pp232013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp232013/' } ]
+      },
+
+      pp242013: { 
+        options: {
+          archive: './archive/opsyen_pp242013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp242013/' } ]
+      },
+
+      pp252013: { 
+        options: {
+          archive: './archive/opsyen_pp252013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp252013/' } ]
+      },
+
+      pp262013: { 
+        options: {
+          archive: './archive/opsyen_pp262013.zip', mode: 'zip' 
+        },
+        files: [ { expand: true, src: '**/*', cwd: 'pekeliling/opsyen/pp262013/' } ]
       }
+
+
+
     }
 
 
@@ -87,7 +204,16 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('assemble');
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'clean', 'build', 'assemble', 'copy', 'compress']);
+  grunt.registerTask('opsyen', 'Run all my build tasks.', function() {
+    var opsyens = ['pp112013' ,'pp122013' ,'pp132013' ,'pp142013' ,'pp152013' ,'pp172013' ,'pp182013' ,'pp192013' ,'pp202013' ,'pp212013' ,'pp222013' ,'pp232013' ,'pp242013' ,'pp252013' ,'pp262013'];
+    opsyens.forEach(function(name) {
+      grunt.task.run('compress:' + name);
+    });
+
+    
+  });
+
+  grunt.registerTask('default', ['jshint', 'clean', 'opsyen', 'build', 'assemble', 'copy', 'compress:pekeliling']);
 };
 
 
