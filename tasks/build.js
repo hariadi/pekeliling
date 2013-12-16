@@ -52,6 +52,12 @@ module.exports = function (grunt) {
             break;
         }
 
+        var opsyen = path.join('./archive', 'opsyen_' + cases + '.zip');
+        if (grunt.file.exists(opsyen)) {
+          opsyen = grunt.util.normalizelf(opsyen.replace('archive\\', ''));
+          data.opsyen = opsyen;
+        }
+
         data.effective_date = effective_date;
 
         grunt.verbose.writeln('>> '.green + title);

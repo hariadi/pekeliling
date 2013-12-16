@@ -1,5 +1,7 @@
 test.html
 *.pdf
+*.DOC
+
 node_modules/
 agensi/
 agensi.zip

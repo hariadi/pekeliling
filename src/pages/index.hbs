@@ -13,7 +13,7 @@ desc : Senarai 27 Pekeliling Perkhidmatan penambahbaikan 81 skim perkhidmatan se
 				</tr>{{#each build}}
 				<tr>
 				  <td><img src="assets/pdf.png" alt="[   ]"></td>
-				  <td><a href="{{ path }}">{{ title }}</a></td>
+				  <td><a href="{{ path }}">{{ title }}</a>{{#if opsyen}}<br><a href="{{ opsyen }}"><img src="assets/doc.png" alt="[   ]"> Borang Opsyen</a>  {{/if}}</td>
 				  <td>{{ effective_date }}</td>
 				  <td>{{ bilangan }}</td>
 				</tr>{{/each}}
